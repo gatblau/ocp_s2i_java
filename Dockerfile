@@ -33,7 +33,7 @@ RUN mkdir -p /opt/jolokia/etc && chmod -R a+w /opt/jolokia/etc && \
     chmod a+rwx -R /app && chown -R 1001:1001 /app
 
 # switch to the app user
-USER app
+USER 1001
 
 # set the working directory
 WORKDIR /deployments/
