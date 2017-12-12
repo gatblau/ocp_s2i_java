@@ -2,7 +2,9 @@
 
 An OpenShift source to image Docker Image builder for Java applications.
 
-## Create a new build
+## How to use the image
+
+### Create a new build
 
 Create a build configuration for the Dockerfile and an image stream in OpenShift as follows:
 
@@ -17,5 +19,13 @@ oc new-build https://github.com/gatblau/ocp_s2i_java.git --name=java --to=java -
 oc logs -f bc/java
 ```
 
-## Building a Java application
+### Build a Java application
+
+```bash
+# create a binary build using the java s2i
+oc new-build  -i java --binary=true --to=my_app --strategy=source
+
+# start the build using the application jar file
+oc start-build java_app --from-file=./target/java_app-0.0.1-SNAPSHOT.jar --follow
+```
 
