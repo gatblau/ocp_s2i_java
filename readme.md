@@ -22,7 +22,7 @@ oc logs -f bc/java
 ### Build a Java application
 
 ```bash
-# create a binary build using the java s2i
+# create a binary build from the 'java' image stream 
 oc new-build  -i java --binary=true --to=my_app --strategy=source
 
 # start the build using the application jar file
